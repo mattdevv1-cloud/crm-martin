@@ -4,6 +4,8 @@
   "outputDirectory": "build",
   "framework": "vite",
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(sw\\.js|manifest\\.json|icons/.*|assets/.*)", "destination": "/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
