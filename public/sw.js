@@ -124,3 +124,5 @@ self.addEventListener('push', (event) => {
     self.registration.showNotification(data.title || 'CRM', options)
   );
 });
+
+
