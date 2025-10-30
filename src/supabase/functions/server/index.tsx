@@ -6,6 +6,13 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 
 const app = new Hono();
 
+// После const app = new Hono();
+app.options('/*', c => c.text('ok', 200, {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+}));
+
 // Create Supabase clients
 const supabaseUrl = Deno.env.get('SUPABASE_URL') || 'https://yvzvicrwkojvluefpmtq.supabase.co';
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2enZpY3J3a29qdmx1ZWZwbXRxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTgyNjIwNSwiZXhwIjoyMDc3NDAyMjA1fQ.PaQFObageOV8WA2PZIwlsy9HlcmekXrpdUQxF8926KU';
