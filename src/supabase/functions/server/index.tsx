@@ -7,9 +7,9 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 const app = new Hono();
 
 // Create Supabase clients
-const supabaseUrl = Deno.env.get('SUPABASE_URL') || '';
-const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
-const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY') || '';
+const supabaseUrl = Deno.env.get('SUPABASE_URL') || 'https://yvzvicrwkojvluefpmtq.supabase.co';
+const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2enZpY3J3a29qdmx1ZWZwbXRxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTgyNjIwNSwiZXhwIjoyMDc3NDAyMjA1fQ.PaQFObageOV8WA2PZIwlsy9HlcmekXrpdUQxF8926KU';
+const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY') || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2enZpY3J3a29qdmx1ZWZwbXRxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MjYyMDUsImV4cCI6MjA3NzQwMjIwNX0.T3fxB6MdU1NPofcHfXOjUdUVG95OQPZ8Z3-a0ItEMKo';
 
 // Enable logger
 app.use('*', logger(console.log));
